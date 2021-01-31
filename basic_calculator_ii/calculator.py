@@ -18,8 +18,8 @@ class Solution:
                     stack.append(-res)
 
                 elif operator == '*':
-
                     stack[-1] = int(stack[-1] * int(res))
+
                 else:
                     stack[-1] = int(stack[-1] / int(res))
 
@@ -27,3 +27,8 @@ class Solution:
                 operator = char
 
         return sum(stack)
+
+
+s = ' 3/2 '
+test = Solution()
+test.calculate(s)

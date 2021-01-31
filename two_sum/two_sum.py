@@ -1,4 +1,7 @@
 # one_pass
+from typing import List
+
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         res = {}
@@ -23,3 +26,9 @@ class Solution:
                     res.append(j)
 
         return res
+
+
+nums = [2, 7, 11, 15]
+target = 9
+test = Solution()
+test.twoSum(nums, target)
