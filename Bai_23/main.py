@@ -1,7 +1,8 @@
 import collections
 # https://leetcode.com/problems/sum-of-distances-in-tree/solution/
 
-def sumOfDistancesInTree(self, N, edges):
+
+def sumOfDistancesInTree(N, edges):
     graph = collections.defaultdict(set)
     for u, v in edges:
         graph[u].add(v)
@@ -26,3 +27,7 @@ def sumOfDistancesInTree(self, N, edges):
     dfs()
     dfs2()
     return ans
+
+
+# Time Complexity: O(N), where N is the number of nodes in the graph.
+# Space Complexity: O(N).
