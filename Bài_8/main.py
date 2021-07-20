@@ -1,5 +1,5 @@
 from typing import List
-
+# https://leetcode.com/problems/n-queens/discuss/886201/NQueens-oror-Backtracking-oror-solution-with-explaination-of-time-complexity
 
 def solveNQueens(n: int) -> List[List[str]]:
     ## APPROACH : BACKTRACKING ##
