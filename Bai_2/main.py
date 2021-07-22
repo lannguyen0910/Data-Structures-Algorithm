@@ -1,22 +1,17 @@
-# list all the permutation: O(n!*n)
-def Print(n, permu):
-    for i in range(1, n + 1):
-        print(permu[i], " ", end=" ")
-    print()
+# list all the permutation: O(n!)
 
 
-def Try(k, n, Bool, permu):
-    for i in range(1, n+1):
-        if not Bool[i]:
-            permu[k] = i
-            Bool[i] = True
-            if k == n:
-                Print(n, permu)
-            else:
-                Try(k+1, n, Bool, permu)
+def perm(a, k=0):
+    if k == len(a):
+        print(a)
+    else:
+        for i in range(k, len(a)):
+            a[k], a[i] = a[i], a[k]
+            perm(a, k+1)
+            a[k], a[i] = a[i], a[k]
 
-            Bool[i] = False
 
+perm([1, 2, 3])
 
 """
 With any permutation, we just need to calculate how many permutations before it. To do this we need to quickly compute the permutation of any n.
