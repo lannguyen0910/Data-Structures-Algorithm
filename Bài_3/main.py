@@ -1,7 +1,7 @@
 # Brute Force 2 for: O(n^2)
 
 
-# Faster: O(nlogm). n is number of array A, m is number of array B. Can reverse!
+# Faster:  O(nlogn) or O(mlogm). n is number of array A, m is number of array B. Can reverse!
 # Goal: Find B[j] closest to -A[i]
 import sys
 import bisect
@@ -30,9 +30,8 @@ def findSmallestDifference(A, B, m, n):
         result = min(res, result)
 
         a += 1
-    # Can try with while(b < n): ...
+    # Can try with: while(b < n): ...
 
-    # return final sma result
     return result
 
 

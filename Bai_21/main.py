@@ -6,9 +6,9 @@
 # Vậy ta có thể tính trước diện tích đa giác từ đỉnh 1 đến đỉnh i để tiện cho việc
 # tính diện tích của đa giác con tạo bởi các cạnh liên tiếp nhau.
 
-# Đó là các nhận xét cơ bản đầu tiên. Có thể thấy để chia đa giác ra thành 2 nửa 
-# thì ta cần 2 đỉnh trong đa giác, vẽ một đoạn thẳng nối 2 điểm lại với nhau là được. 
-# Sau khi có 2 hình đa giác con thì dùng cách trên để tính diện tích một cách nhanh chóng. 
+# Đó là các nhận xét cơ bản đầu tiên. Có thể thấy để chia đa giác ra thành 2 nửa
+# thì ta cần 2 đỉnh trong đa giác, vẽ một đoạn thẳng nối 2 điểm lại với nhau là được.
+# Sau khi có 2 hình đa giác con thì dùng cách trên để tính diện tích một cách nhanh chóng.
 # Độ phức tạp cuối cùng là O(n^2) để tìm 2 điểm bất kì.
 
 
@@ -25,7 +25,7 @@ def polygonArea(X, Y, n):
         j = i   # j is previous vertex to i
 
     # Return absolute value
-    return int(abs(area / 2.0))
+    return abs(area / 2.0)
 
 
 # Driver program to test above function
@@ -35,10 +35,10 @@ n = len(X)
 print(polygonArea(X, Y, n))
 
 
-# Cải tiến: Giả sử ta đã có sẵn 2 đỉnh bất kỳ nào đó trong đa giác. 
+# Cải tiến: Giả sử ta đã có sẵn 2 đỉnh bất kỳ nào đó trong đa giác.
 # Đầu tiên ta thử cố định đỉnh thứ nhất, đỉnh thứ 2 ta sẽ cho nó di chuyển.
-#  Có thể thấy rằng diện tích của đa giác 1 sẽ dần lớn ra và diện tích đa giác 2 dần nhỏ đi, 
-# đồng nghĩa khoảng cách giữa chúng sẽ nhỏ lại. Nếu đến một lúc nào đó mà khoảng cách này 
+#  Có thể thấy rằng diện tích của đa giác 1 sẽ dần lớn ra và diện tích đa giác 2 dần nhỏ đi,
+# đồng nghĩa khoảng cách giữa chúng sẽ nhỏ lại. Nếu đến một lúc nào đó mà khoảng cách này
 # lại lớn lên trở lại thì có thể thấy việc tiếp tục di chuyển đỉnh 2 sẽ trở nên vô nghĩa.
 #  Khi đó ta bắt đầu dịch đỉnh 1 lên một bước và lặp lại các bước như trên.
 #  Cuối cùng ta sẽ được kết quả mong muốn. Kỹ thuật này được biết đến là 2 con trỏ.
@@ -57,7 +57,7 @@ v = 2
 while u <= n:
     while(True):
         V = (v + 1) % n + 1
-        if diff(u, v) < diff(u, V): # Chênh lệch diện tích của 2 đa giác cắt bởi đoạn thẳng uv / uV
+        if diff(u, v) < diff(u, V):  # Chênh lệch diện tích của 2 đa giác cắt bởi đoạn thẳng uv / uV
             break
         v += 1
     res = min(res, diff(u, v))

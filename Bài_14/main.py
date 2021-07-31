@@ -51,7 +51,7 @@ To store the stack space and the visited array O(V) space is needed.
 """The solution can be optimized using Dynamic Programming. 
 The idea is to build a 3D table where the first dimension is the source, the second dimension is the destination, 
 the third dimension is the number of edges from source to destination, and the value is the count of walks.
- Like others, Dynamic Programming problems, fill the 3D table in a bottom-up manner."""
+Like others, Dynamic Programming problems, fill the 3D table in a bottom-up manner."""
 
 
 def countwalks2(graph, u, v, k):
@@ -94,9 +94,6 @@ def countwalks2(graph, u, v, k):
     return count[u][v][k]
 
 
-# Driver Code
-
-# Let us create the graph shown in above diagram
 graph = [[0, 1, 1, 1, ],
          [0, 0, 0, 1, ],
          [0, 0, 0, 1, ],

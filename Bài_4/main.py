@@ -1,7 +1,7 @@
 class BIT:
     def __init__(self, n):
         self.n = n + 1
-        self.sums = [0] * self.n
+        self.sums = [0] * n
 
     def update(self, i, delta):
         while i < self.n:
@@ -46,7 +46,7 @@ def reversePairs(nums):
 print(reversePairs([5, 2, 6, 1]))
 
 
-def countSmaller(self, nums):
+def countSmaller(nums):
     """
     :type nums: List[int]
     :rtype: List[int]
@@ -66,7 +66,7 @@ def countSmaller(self, nums):
     # - thats why keep a count of inversions variable. for every inversion needed,
     # increase inversions var
 
-    self.counts = [0]*len(nums)
+    counts = [0]*len(nums)
 
     def merge(left, right):
         i1, i2 = 0, 0
@@ -77,13 +77,13 @@ def countSmaller(self, nums):
         if not right:
             return left
 
-        # to hold a list of i1 indexes for which self.count[i1] has received inversions.
+        # to hold a list of i1 indexes for which count[i1] has received inversions.
         set1 = set()
         while i1 < len(left) or i2 < len(right):
             if i2 >= len(right):
                 if left[i1][1] not in set1:
                     set1.add(left[i1][1])
-                    self.counts[left[i1][1]] += inversions
+                    counts[left[i1][1]] += inversions
                 arr.append(left[i1])
                 i1 += 1
                 continue
@@ -98,20 +98,20 @@ def countSmaller(self, nums):
                 if left[i1][1] not in set1:
                     # first left[i1] > right[i2] gets all inversions in count.
                     set1.add(left[i1][1])
-                    self.counts[left[i1][1]] += inversions
+                    counts[left[i1][1]] += inversions
                 else:
                     # consecutive invesions adds 1
-                    self.counts[left[i1][1]] += 1
+                    counts[left[i1][1]] += 1
                 arr.append(right[i2])
                 i2 += 1
             else:
                 if left[i1][1] not in set1:
                     set1.add(left[i1][1])
-                    self.counts[left[i1][1]] += inversions
+                    counts[left[i1][1]] += inversions
                 arr.append(left[i1])
                 i1 += 1
 
-        # print("count: {}".format(self.counts))
+        # print("count: {}".format(counts))
         return arr
 
     def mergesort(arr):
@@ -130,7 +130,7 @@ def countSmaller(self, nums):
         tmp_array.append((val, i))
 
     mergesort(tmp_array)
-    return self.counts
+    return counts
 
 #   time - O(n) + O(nlogn) = O(nlogn)
-# 	 space - O(n)
+# 	space - O(n)
